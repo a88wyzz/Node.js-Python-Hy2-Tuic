@@ -57,7 +57,7 @@ download_binary() {
         echo "✅ 二进制已存在，跳过下载。"
         return
     fi
-    URL="https://github.com/apernet/hysteria/releases/download/app/${HYSTERIA_VERSION}/${BIN_NAME}"
+    URL="https://github.com/apernet/hysteria/releases/latest/download/${BIN_NAME}"
     echo "⏳ 下载: $URL"
     curl -L --retry 3 --connect-timeout 30 -o "$BIN_PATH" "$URL"
     chmod +x "$BIN_PATH"
