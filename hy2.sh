@@ -134,14 +134,22 @@ print_connection_info() {
     echo "=========================================================================="
 }
 
-# ---------- 主逻辑 ----------
+# ---------- 修改后的主逻辑 ----------
 main() {
     download_binary
     ensure_cert
     write_config
     SERVER_IP=$(get_server_ip)
+    
+    # 清屏，让输出看起来像一个专业的控制面板
+    printf "\033c"
     print_connection_info "$SERVER_IP"
-    echo "🚀 启动 Hysteria2 服务器..."
+    
+    echo "🚀 服务器正在运行... (日志已静默)"
+    echo "💡 提示: 按下 Ctrl+C 停止服务。"
+    
+    # 使用 exec 替换当前 shell 进程，节省一点点内存
+    # 并且已经按照你的要求屏蔽了所有输出
     exec "$BIN_PATH" server -c server.yaml > /dev/null 2>&1
 }
 
