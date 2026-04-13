@@ -114,7 +114,7 @@ print_connection_info() {
     local GREEN='\033[1;32m'
     local NC='\033[0m' # No Color (重置)
 
-    echo "🎉 Hysteria2 部署成功！（极简优化版）"
+    echo "🎉 Hy2 部署成功！（极简优化版）"
     echo "=========================================================================="
     echo "📋 服务器信息:"
     echo "    🌐 IP地址: $IP"
@@ -137,7 +137,7 @@ main() {
     printf "\033c"
     print_connection_info "$SERVER_IP"
     
-    echo "🚀 服务器正在运行... (日志已静默)"
+    echo "🚀 Hy2服务正在运行... (日志已静默)"
     echo "💡 提示: 按下 Ctrl+C 停止服务。"
     
     # 使用 exec 替换当前 shell 进程，节省一点点内存
