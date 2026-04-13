@@ -110,28 +110,20 @@ get_server_ip() {
 # ---------- 打印连接信息 ----------
 print_connection_info() {
     local IP="$1"
+    # 定义绿色和重置色
+    local GREEN='\033[1;32m'
+    local NC='\033[0m' # No Color (重置)
+
     echo "🎉 Hysteria2 部署成功！（极简优化版）"
     echo "=========================================================================="
     echo "📋 服务器信息:"
-    echo "   🌐 IP地址: $IP"
-    echo "   🔌 端口: $SERVER_PORT"
-    echo "   🔑 密码: $AUTH_PASSWORD"
+    echo "    🌐 IP地址: $IP"
+    echo "    🔌 端口: $SERVER_PORT"
+    echo "    🔑 密码: $AUTH_PASSWORD"
     echo ""
     echo "📱 节点链接（SNI=${SNI}, ALPN=${ALPN}, 跳过证书验证）:"
-    echo "hysteria2://${AUTH_PASSWORD}@${IP}:${SERVER_PORT}?sni=${SNI}&alpn=${ALPN}&insecure=1#Hy2-Bing"
+    echo -e "${GREEN}hysteria2://${AUTH_PASSWORD}@${IP}:${SERVER_PORT}?sni=${SNI}&alpn=${ALPN}&insecure=1#Hy2-Bing${NC}"
     echo ""
-    echo "📄 客户端配置文件:"
-    echo "server: ${IP}:${SERVER_PORT}"
-    echo "auth: ${AUTH_PASSWORD}"
-    echo "tls:"
-    echo "  sni: ${SNI}"
-    echo "  alpn: [\"${ALPN}\"]"
-    echo "  insecure: true"
-    echo "socks5:"
-    echo "  listen: 127.0.0.1:1080"
-    echo "http:"
-    echo "  listen: 127.0.0.1:8080"
-    echo "=========================================================================="
 }
 
 # ---------- 修改后的主逻辑 ----------
