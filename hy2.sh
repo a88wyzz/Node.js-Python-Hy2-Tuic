@@ -96,7 +96,7 @@ quic:
   initial_conn_receive_window: 131072
   max_conn_receive_window: 262144
 log:
-  level: debug
+  level: error
 EOF
     echo "✅ 写入配置 server.yaml（端口=${SERVER_PORT}, SNI=${SNI}, ALPN=${ALPN}）。"
 }
