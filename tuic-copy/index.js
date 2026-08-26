@@ -8,7 +8,7 @@
  * 
  *    const UUID = "在这里填入您的UUID";
  * 
- *    示例：const UUID = "fdeeda45-0a8e-4570-bcc6-d68c995f5830";
+ *    示例：const UUID = "8f64ad09-709f-410e-a294-09894ed1fc45";
  * 
  *    每次部署前请务必修改此值！
  * =========================================
@@ -19,13 +19,13 @@ import https from "https";
 import crypto from "crypto";
 
 // ================== 【手动设置 UUID 和 固定密码】==================
-const UUID = "fdeeda45-0a8e-4570-bcc6-d68c995f5830";  // 修改这里！
-const FIXED_PASSWORD = "your_fixed_password_here";  // 固定密码
+const UUID = "8f64ad09-709f-410e-a294-09894ed1fc45";  // 修改这里！
+const FIXED_PASSWORD = "wnV2vhOW";  // 固定密码
 
 // 格式校验（防止错误）
 if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(UUID)) {
   console.error("\nUUID 格式错误！");
-  console.error("正确格式示例: fdeeda45-0a8e-4570-bcc6-d68c995f5830");
+  console.error("正确格式示例: 8f64ad09-709f-410e-a294-09894ed1fc45");
   console.error("当前值: " + UUID);
   process.exit(1);
 }
@@ -143,7 +143,7 @@ function generateCert(domain) {
     `-keyout ${KEY_PEM} -out ${CERT_PEM} -subj "/CN=${domain}" -days 365 -nodes`
   );
   fs.chmodSync(KEY_PEM, 0o600);
-  fs.chmodSync(CERT_PEM, 0o644);
+  fs.chmodSync(CERT_PEM, 0o644);https://github.com/a88wyzz
 }
 
 // ================== 下载 tuic-server ==================
@@ -152,8 +152,8 @@ async function checkTuicServer() {
     console.log("tuic-server exists");
     return;
   }
-  console.log("Downloading tuic-server v1.6.7...");
-  const url = "https://github.com/Itsusinn/tuic/releases/download/v1.6.7/tuic-server-x86_64-linux";
+  console.log("Downloading tuic-server ...");
+  const url = "https://github.com/Itsusinn/tuic/releases/latest/download/tuic-server-x86_64-linux-musl";
   await downloadFile(url, TUIC_BIN);
   fs.chmodSync(TUIC_BIN, 0o755);
   console.log("tuic-server downloaded");
