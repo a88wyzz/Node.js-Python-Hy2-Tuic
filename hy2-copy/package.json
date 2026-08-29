@@ -1,0 +1,16 @@
+{
+  "name": "Hy2-node",
+  "version": "1.0.0",
+  "description": "Hy2 自动部署脚本（Node.js 版，无需 root）",
+  "main": "node.js",
+  "type": "module",
+  "scripts": {
+    "start": "node node.js"
+  },
+  "keywords": ["hy2", "quic", "vpn", "deploy", "nodejs", "no-root"],
+  "author": "a88wyzz",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
