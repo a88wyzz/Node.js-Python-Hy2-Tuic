@@ -179,7 +179,7 @@ function generateLink(password, ip, port, domain) {
 
 // ================== 守护运行 ==================
 function runLoop() {
-  console.log("Starting hy2 service...");
+  console.log("🚀 Hysteria2 服务正在运行... (日志已静默)");
   const loop = () => {
     const proc = spawn(hy2_BIN, ["server", "-c", SERVER_YAML], { stdio: "ignore" });
     proc.on("exit", (code) => {
