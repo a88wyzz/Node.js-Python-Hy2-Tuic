@@ -173,13 +173,13 @@ masquerade:
 function generateLink(password, ip, port, domain) {
   const link = `hy2://${password}@${ip}:${port}?alpn=h3&insecure=1&sni=${domain}#hy2-${ip}`;
   fs.writeFileSync(LINK_TXT, link);
-  console.log("hy2 Link:");
+  console.log("📱 节点链接（SNI=${domain}, ALPN=h3, 跳过证书验证：");
   console.log(link);
 }
 
 // ================== 守护运行 ==================
 function runLoop() {
-  console.log("🚀 Hysteria2 服务正在运行... (日志已静默)");
+  console.log("🚀    Hysteria2 服务正在运行... (日志已静默)");
   const loop = () => {
     const proc = spawn(hy2_BIN, ["server", "-c", SERVER_YAML], { stdio: "ignore" });
     proc.on("exit", (code) => {
