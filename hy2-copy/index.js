@@ -173,7 +173,7 @@ masquerade:
 function generateLink(password, ip, port, domain) {
   const link = `hy2://${password}@${ip}:${port}?alpn=h3&insecure=1&sni=${domain}#hy2-${ip}`;
   fs.writeFileSync(LINK_TXT, link);
-  console.log("📱 节点链接（SNI=${domain}, ALPN=h3, 跳过证书验证：");
+  console.log("📱 节点链接，跳过证书验证：");
   console.log(link);
 }
 
